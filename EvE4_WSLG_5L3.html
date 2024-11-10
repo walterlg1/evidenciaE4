@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante de Mariscos</title>
+    <link rel="stylesheet" href="restaurante.css">
+    <script src="restaurante.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Restaurante de Mariscos</h1>
+        <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    </header>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <a href="#inicio">Inicio</a>
+            <a href="#menu">Menú</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#ubicacion">Ubicación</a>
+            <a href="javascript:void(0);" onclick="toggleSistema()">Sistema</a>
+        </nav>
+        <main>
+            <section id="inicio">
+                <h2>Bienvenidos a nuestro Restaurante</h2>
+                <p>Disfruta de los mariscos más frescos y deliciosos en un ambiente acogedor.</p>
+                <h3>Especialidades del Día</h3>
+                <ul>
+                    <li>Ceviche de Pulpo</li>
+                    <li>Camarones al Ajillo</li>
+                    <li>Langosta Termidor</li>
+                </ul>
+                <h3>Nuestro Menú</h3>
+                <p>Explora una variedad de platillos preparados con los ingredientes más frescos del mar.</p>
+            </section>
+            <section id="sistema" style="display:none;">
+                <h2>Sistema de Inicio de Sesión</h2>
+                <form id="loginForm" onsubmit="return mostrarTablas();">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required><br><br>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required><br><br>
+                    <button type="submit">Ingresar</button>
+                </form>
+                <div id="tablas" style="display:none;">
+                    <h2>Tablas de la Base de Datos</h2>
+                    <div class="tabla">
+                        <h3>Clientes</h3>
+                        <button onclick="consultar('Clientes')">Consultar</button>
+                        <button onclick="eliminar('Clientes')">Eliminar</button>
+                        <button onclick="actualizar('Clientes')">Actualizar</button>
+                        <button onclick="insertar('Clientes')">Insertar</button>
+                    </div>
+                    <div class="tabla">
+                        <h3>Proveedores</h3>
+                        <button onclick="consultar('Proveedores')">Consultar</button>
+                        <button onclick="eliminar('Proveedores')">Eliminar</button>
+                        <button onclick="actualizar('Proveedores')">Actualizar</button>
+                        <button onclick="insertar('Proveedores')">Insertar</button>
+                    </div>
+                    <div class="tabla">
+                        <h3>Artículos</h3>
+                        <button onclick="consultar('Articulos')">Consultar</button>
+                        <button onclick="eliminar('Articulos')">Eliminar</button>
+                        <button onclick="actualizar('Articulos')">Actualizar</button>
+                        <button onclick="insertar('Articulos')">Insertar</button>
+                    </div>
+                    <div class="tabla">
+                        <h3>Facturas</h3>
+                        <button onclick="consultar('Facturas')">Consultar</button>
+                        <button onclick="eliminar('Facturas')">Eliminar</button>
+                        <button onclick="actualizar('Facturas')">Actualizar</button>
+                        <button onclick="insertar('Facturas')">Insertar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+</body>
+</html>
